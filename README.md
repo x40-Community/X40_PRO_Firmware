@@ -1,4 +1,4 @@
-# WEEDO X40 Community Firmware
+# X40 PRO Community Firmware
 ![image](http://www.weedo.ltd/wp-content/uploads/2021/04/970x300-ABanner1.jpg)
 
 ## Summary
