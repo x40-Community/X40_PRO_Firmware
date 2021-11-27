@@ -34,10 +34,12 @@ private:
 
 	enum FILAMENT_TYPE
 	{
-		FT_PLA = 0,
-		FT_ABS = 1,
+		FT_NONOILEN = 0,
+		FT_PLA = 1,
 		FT_TPU = 2,
-		FT_OTHER = 3
+		FT_PETG = 3,
+		FT_ASA = 4,
+		FT_PCTG = 5
 	};
 
 	void ShowProcess(void);

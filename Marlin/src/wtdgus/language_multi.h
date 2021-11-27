@@ -28,10 +28,10 @@ const char MMSG_UNKNOWN_TIME[] PROGMEM = { "??h??m" };
 
 const char MMSG_SPEED_VALUE1[8] PROGMEM = { "  25%" };
 const char MMSG_SPEED_VALUE2[8] PROGMEM = { "  50%" };
-const char MMSG_SPEED_VALUE3[8] PROGMEM = { "  100%" };
-const char MMSG_SPEED_VALUE4[8] PROGMEM = { "  200%" };
-const char MMSG_SPEED_VALUE5[8] PROGMEM = { "  400%" };
-const char MMSG_SPEED_VALUE6[8] PROGMEM = { "  600%" };
+const char MMSG_SPEED_VALUE3[8] PROGMEM = { "  75%" };
+const char MMSG_SPEED_VALUE4[8] PROGMEM = { "  100%" };
+const char MMSG_SPEED_VALUE5[8] PROGMEM = { "  125%" };
+const char MMSG_SPEED_VALUE6[8] PROGMEM = { "  150%" };
 const char TEMP_STRING[] PROGMEM = { "%d℃" };
 
 const char MMSG_ERR_HOMING_FAILED[8][53] PROGMEM = {
@@ -45,7 +45,7 @@ const char MMSG_ERR_HOMING_FAILED[8][53] PROGMEM = {
     "Homing fout"
 };
 
-const char MMSG_ERR_PROBING_FAILED[8][55] PROGMEM = {
+const char MMSG_ERR_PROBING_FAILED[8][56] PROGMEM = {
 	"自动调平失败",			// 自动调平失败
 	"Probing failed",
 	"プロービング失敗",
@@ -448,7 +448,7 @@ const char MMSG_SETTING_FEED[8][22] PROGMEM = {
 	"  自動ワイヤ送り",
 	"Entrada de filamento",
     " Charge filament",
-	" Filament Zuführung",
+	" Filament Zufühen",
 	" Carica filamento",
     " Filament Invoer"
 };
@@ -514,7 +514,7 @@ const char MMSG_SETTING_SENSOR[8][22] PROGMEM = {
 	"   近接の高さ",
 	"   Proximidad",
     "proximité Hauteur",
-    " Proximity Hohe",
+    " Proximity Hoehe",
     "Proximity Altezza",
     "Hoogte-sensor Hoogte"
 };
@@ -689,7 +689,7 @@ const char MMSG_STATUS_LABEL_NOZZLE1[8][10] PROGMEM = {
 	"左ノズル",
 	"Izquierdo",
 	"La gauche",
-	"links",
+	"Düse L",
 	"Sinistra",
     "Links"
 };
@@ -700,7 +700,7 @@ const char MMSG_STATUS_LABEL_NOZZLE2[8][10] PROGMEM = {
 	"右ノズル",
 	"Derecho",
 	"Droit",
-	"rechts",
+	"Düse R",
 	"Destro",
     "Rechts"
 };
@@ -711,7 +711,7 @@ const char MMSG_STATUS_LABEL_BED[8][12] PROGMEM = {
 	"ベッド",
 	"Cama",
     "Lit",
-	"Druckbett",
+	"Heizbett",
 	"Piatto",
     "Bed"
 };
@@ -826,13 +826,13 @@ const char MMSG_PRINTINT_SETTING_TITLE[8][30] PROGMEM = {
     "Print Instelling"
 };
 
-const char MMSG_CONFIRM_TITLE[8][13] PROGMEM = {
+const char MMSG_CONFIRM_TITLE[8][14] PROGMEM = {
 	"确认",
 	"Confirm",
 	"確認する",
 	"Confirmar",
     "Confirmer",
-    "Bestatigen",
+    "Bestätigen",
     "Confermare",
     "Bevestig"
 };
@@ -887,7 +887,7 @@ const char MMSG_PREHEAT_TITLE[8][42] PROGMEM = {
 	"目標温度を設定する",
 	"Ajustar la temperatura objetivo",
     "Définir la température cible",
-    "gewünschte Ziel-Temperatur einstellen",
+    "Temperatureinstellung",
     "Imposta la temperatura target",
     "Stel Doel Temperatuur in"
 };
@@ -920,49 +920,60 @@ const char MMSG_ERROR_MAXTEMP[8][68] PROGMEM = {
 	"ノズルの故障: 温度が最高値を超えています",
 	"Fallo de la boquilla: temperatura demasiado alta",
     "Panne de buse: la température dépasse le maximum",
-    "Düsenfehler: Temperatur übersteigt den zulassigen Hochstwert!",
+    "Düsenfehler: Temperatur übersteigt den zulassigen Höchstwert!",
     "Guasto ugello: la temperatura supera il massimo",
     "Printkop fout: temperatuur hoger dan toegestaan"
 };
 
-const char MMSG_FILAMENT_TYPE_NAME1[4] PROGMEM = {
-	"PLA"
+const char MMSG_FILAMENT_TYPE_NAME1[15] PROGMEM = {
+	"200℃ NonOilen"
 };
 
-const char MMSG_FILAMENT_TYPE_NAME2[4] PROGMEM = {
-	"ABS"
+const char MMSG_FILAMENT_TYPE_NAME2[10] PROGMEM = {
+	"220℃ PLA"
 };
 
 const char MMSG_FILAMENT_TYPE_NAME4[10] PROGMEM = {
-	"TPU 240℃"
+	"230℃ TPU"
 };
 
-const char MMSG_FILAMENT_TYPE_NAME3[8][19] PROGMEM = {
-	"高温料丝",
-	"Other Filament",
-	"その他の",
-	"Otro filamento",
-    "Autre filament",
-    "Anderes Filament",
-    "Altro",
-    "Ander Filament"
+const char MMSG_FILAMENT_TYPE_NAME3[11] PROGMEM = {
+	"240℃ PETG"
 };
+
+const char MMSG_FILAMENT_TYPE_NAME5[10] PROGMEM = {
+	"250℃ ASA"
+};
+
+const char MMSG_FILAMENT_TYPE_NAME6[11] PROGMEM = {
+	"260℃ PCTG"
+};
+
+
+
 const char MMSG_FILAMENT_TYPE_TEMP1[8] PROGMEM = {
-	"210℃"
+	"200℃"
 };
 
 const char MMSG_FILAMENT_TYPE_TEMP2[8] PROGMEM = {
-	"235℃"
+	"220℃"
 };
 
 const char MMSG_FILAMENT_TYPE_TEMP3[8] PROGMEM = {
-	"260℃"
+	"230℃"
 };
 
 const char MMSG_FILAMENT_TYPE_TEMP4[6] PROGMEM = {
 	"240℃"
 };
 
+const char MMSG_FILAMENT_TYPE_TEMP5[6] PROGMEM = {
+	"250℃"
+};
+
+const char MMSG_FILAMENT_TYPE_TEMP6[6] PROGMEM = {
+	"260℃"
+};
 const char MMSG_FILAMENT_TYPE_TITLE[8][30] PROGMEM = {
 	"选择料丝类型 ",
 	"Filament Type ",
@@ -1180,7 +1191,7 @@ const char MMSG_LEVEL0_LINE1[8][230] PROGMEM = {
 	"レベルベッドは, プラットフォームとノズルの4点間のギャップを測定し調整することです.\r\n紙を用意して始めます.",
 	"La cama nivelada es para medir y ajustar el espacio entre los 4 puntos de la plataforma y la boquilla.\r\nPreparar un papel y comenzar.",
     "Level Bed permet de mesurer et d'ajuster l'écart entre les 4 points de la plateforme et la buse.\r\nPréparez un papier et commencez.",
-    "Das Druckbett wird gelevelt um den Abstand zwischen den 4 Eckpunkten der Druckplattform und der Düse korrekt einzustellen.\r\nHalten Sie ein Blatt normales (Schreib)Papier bereit und starten Sie dann den Vorgang.",
+    "Das Druckbett wird gelevelt um den Abstand zwischen den 4 Eckpunkten der Druckplattform und der Düse korrekt einzustellen.\r\nHalten Sie ein Blatt normales Schreibpapier bereit und starten Sie dann den Vorgang.",
     "Level Bed serve per misurare e regolare la distanza tra i 4 punti della piattaforma e la bocchetta.\r\nPrepara un foglio e inizia.",
     "Level Bed is om de afstand tussen het printbed en de printkop of 4 plaatsten te meten en in te stellen.\r\nNeem een stuk papier en begin."
 };
@@ -1268,7 +1279,7 @@ const char MMSG_ZOFFSET_LINE[8][440] PROGMEM = {
 	"Z軸オフセットを使用して, ノズルとプラットフォーム間のギャップを微調整します. ノズルの下に配置する紙を準備します. ボタンをクリックして, ギャップが紙の厚さになるまでプラットフォームを上下に移動します. \r\n終了したら、[保存]をクリックして終了します.",
 	"eje Z desplazamiento de recorte para la boquilla hueco y la plataforma. Preparar una hoja de papel colocado bajo la cabeza. Haga clic en la mesa de movimiento fino vertical, un espesor de la brecha hasta una hoja de papel. Cuando termine, haga clic en Guardar para salir.",
     "Le décalage de l'axe Z est utilisé pour régler l'écart entre la buse et la plate-forme. Préparez un morceau de papier à placer sous la buse. Cliquez sur le bouton pour déplacer la plate-forme vers le haut et vers le bas jusqu'à ce que l'espace ait la même épaisseur qu'un morceau de papier. Cliquez après avoir terminé Enregistrer et quitter.",
-    "Die Einstellung des Z-Versatzes (Offset) ist notig, um den Abstand zwischen Düse und Druckplattform genau abzustimmen. Bereiten Sie ein Blatt normales (Schreib)Papier vor, welches Sie zwischen Düse und Druckbett positionieren. Drücken Sie anschliebend die entsprechende Schaltflache, um die Düse auf und ab zu bewegen, bis der Abstand gerade die Dicke des Papiers hat.  Wenn Sie fertig sind klicken Sie auf Speichern und Schlieben.",
+    "Die Einstellung des Z-Versatzes (Offset) ist nötig, um den Abstand zwischen Düse und Druckplattform genau abzustimmen. Bereiten Sie ein Blatt normales (Schreib)Papier vor, welches Sie zwischen Düse und Druckbett positionieren. Drücken Sie anschliebend die entsprechende Schaltflache, um die Düse auf und ab zu bewegen, bis der Abstand gerade die Dicke des Papiers hat.  Wenn Sie fertig sind klicken Sie auf Speichern und Schliessen.",
     "L'offset dell'asse Z viene utilizzato per regolare la distanza tra l'ugello e la piattaforma. Preparare un foglio di carta da posizionare sotto la bocchetta. Fare clic sul pulsante per spostare la piattaforma su e giù fino a quando lo spazio è lo spessore di un pezzo di carta. Fare clic dopo aver terminato Salva ed esci.",
     "De Z-as marge wordt gebruikt om de afstand tussen de printkop en het printbed te fine tunen. Gebruik een stukje normaal printpapier om onder de printkop te schuiven.\r\nGebruik de knoppen om de hoogte aan te passen totdat de afstand tussen printkop en printbed gelijk is aan de dikte van het papier. Daarna Opslaan en Afsluiten."
 };
@@ -1284,13 +1295,13 @@ const char MMSG_MOTOROFF_LINE1[8][55] PROGMEM = {
     "\r\n\r\nAlle motor outputs zijn uitgeschakeld."
 };
 
-const char MMSG_POXIMITY_TITLE[8][40] PROGMEM = {
+const char MMSG_POXIMITY_TITLE[8][43] PROGMEM = {
 	"接近开关高度调节",
 	"Proximity Height Adjustment",
  	"近接センサーの高さ調整",
 	"Ajuste de altura de proximidad",
     "Réglage de la hauteur de proximité",
-    "Hohenjustierung des Annaherungssensors",
+    "Hoehenjustierung des Naeherungssensors",
     "Regolazione dell'altezza di prossimità",
     "Hoogte-sensor Hoogte Aanpassing"
 };
@@ -1301,7 +1312,7 @@ const char MMSG_POXIMITY_LINE[8][250] PROGMEM = {
  	"移動した後, 近接がオンになっているはずです. オフになっている場合は,スイッチがオンになるまでネジを緩め,近接の高さを微調整します. 次に近接位置を固定します.\r\n現在の状況は以下のとおりです:",
 	"Después de mover, la proximidad debe estar en. De lo contrario, afloje el tornillo y ajuste la altura de proximidad hasta que se encienda el interruptor. Entonces arréglalo. \r\nEl estado actual es:",
     "Après le déplacement, la proximité doit être activée. S'il est éteint, desserrez la vis et ajustez la hauteur de proximité, jusqu'à ce que l'interrupteur soit allumé. Fixez ensuite la position de proximité.\r\nL'état actuel est:",
-    "Nach der Bewegung sollte der Annaherungssensor AN sein. Wenn er AUS ist, lockern Sie die Schraube und andern die Hohe des Sensors bis der Status unten auf AN springt. Danach fixieren Sie die Schraube wieder. Der aktuelle Status ist:",
+    "Nach der Bewegung sollte der Näherungssensor AN sein. Wenn er AUS ist, lockern Sie die Schraube und ändern die Höhe des Sensors bis der Status unten auf AN springt. Danach fixieren Sie die Schraube wieder. Der aktuelle Status ist:",
     "Dopo lo spostamento, la prossimità dovrebbe essere attiva. Se è spento, allentare la vite e regolare con precisione l'altezza di prossimità, fino a quando l'interruttore è acceso. Quindi fissare la posizione di prossimità. Lo stato attuale è:",
     "Na het bewegen zoud de hoogte-sensor aan moeten staan. Als deze uitstaat, draai de schroef los en pas de hoogte aan. de hoogte van de sensor, totdat deze aangaat.\r\nZet de sensor nu weer vast. De status is:"
 };
@@ -1312,7 +1323,7 @@ const char MMSG_SWITCH_ON[8][7] PROGMEM = {
  	"に",
 	"ON",
     "SUR",
-    "AU",
+    "AN",
     "SOPRA",
     "AAN"
 };
@@ -1334,7 +1345,7 @@ const char MMSG_MACHINE_TITLE[8][30] PROGMEM = {
  	"マシン情報",
 	"Información de la máquina",
     "Informations sur la machine",
-    "Gerateinformationen",
+    "Geraeteinformationen",
     "Informazioni sulla macchina",
     "Machine Informatie"
 };
@@ -1345,7 +1356,7 @@ const char MMSG_MACHINE_ITEM1[8][26] PROGMEM = {
  	"装置名:",
 	"Nombre del dispositivo",
     "Nom de l'appareil",
-    "Geatename",
+    "Graetename",
     "Nome del dispositivo",
     "Apparaat Naam"
 };
@@ -1400,7 +1411,7 @@ const char MMSG_MACHINE_ITEM6[8][20] PROGMEM = {
  	"WIFIデバイス",
 	"Dispositivo wifi",
     "Dispositif WIFI",
-    "WIFI-Gerat",
+    "WIFI-Geraet",
     "Dispositivo WIFI",
     "WiFi Apparaat"
 };
@@ -1433,7 +1444,7 @@ const char MMSG_WIFI_INFO_TITLE[8][26] PROGMEM = {
  	"WIFIデバイス情報",
 	"Información wifi",
     "Informations WIFI",
-    "WiFi-Gerateinformation",
+    "WiFi-Geraeteinformation",
     "Informazioni WIFI",
     "WiFi Apparaat Informatie"
 };
@@ -1573,7 +1584,7 @@ const char MMSG_RESTORE_SETTING_LINE[8][99] PROGMEM = {
  	"\r\n\r\n  工場出荷時の設定に戻しますか?",
 	"\r\n\r\n Estás seguro de restaurar a la predeterminada?",
     "\r\n\r\n Etes-vous sur de vouloir restaurer les paramètres d'usine?",
-    "\r\n\r\n  Sind Sie sicher, dass Sie den Drucker auf Werkseinstellungen zurücksetzen mochten?",
+    "\r\n\r\n  Sind Sie sicher, dass Sie den Drucker auf Werkseinstellungen zurücksetzen möchten?",
     "\r\n\r\n Sei sicuro di ripristinare le impostazioni di fabbrica?",
     "\r\n\r\nBen je zeker dat je de fabrieksinstellingen wilt terugzetten?"
 };
@@ -1584,7 +1595,7 @@ const char MMSG_SPEED_SETTING_TITLE[8][40] PROGMEM = {
  	"印刷速度設定",
 	"Ajuste de velocidad",
     "Réglage de la vitesse d'impression",
-    "Einstellung der Druckgeschwindigkeit",
+    "Geschwindigkeitseinstellung",
     "Impostazione della velocità di stampa",
     "Print Snelheid Instelling"
 };
@@ -1595,7 +1606,7 @@ const char MMSG_POWER_SAVE_TITLE[8][70] PROGMEM = {
  	"オートパワーオフ設定",
 	"Ajuste de apagado automático",
     "Réglage de la mise hors tension automatique",
-    "Einstellung zur automatischen Druckerabschaltung (Auto Power Off)",
+    "Auto Power Off",
     "Impostazione spegnimento automatico",
     "Auto Power Off Instelling"
 };
@@ -1606,7 +1617,7 @@ const char MMSG_POWEROFF_VALUE1[8][15] PROGMEM = {
  	"  閉じる",
 	" Inhabilitar",
     " Désactiver",
-    " Deaktiviert",
+    " Deaktiv",
     " disattivare",
     "Uitgeschakeld"
 };
@@ -1683,7 +1694,7 @@ const char MMSG_SKIP[8][16] PROGMEM = {
  	" スキップ",
 	"  Saltar",
     "  Sauter",
-    "Uberspringen",
+    "Überspringen",
     "  Salta",
     " Overslaan"
 };
@@ -1760,7 +1771,7 @@ const char MMSG_SELF_TEST_PASS[8][11] PROGMEM = {
  	"合格",
 	"PASAR",
     "PASSER",
-    "PASS",
+    "Okay",
     "PASSAGGIO",
     "Geslaagd"
 };
@@ -1958,7 +1969,7 @@ const char MMSG_PRINTING_NOTICE[8][116] PROGMEM = {
     "\r\n\r\n 続行する前に一時停止してください",
 	"\r\n\r\n Pausa antes de continuar",
     "\r\n\r\n Veuillez faire une pause avant de continuer",
-    "\r\n Diese Funktion ist wahrend eines Druckes nicht moglich. Sie müssen den Druck erst pausieren oder beenden!",
+    "\r\n Diese Funktion ist wahrend eines Druckes nicht möglich. Sie müssen den Druck erst pausieren oder beenden!",
     "\r\n\r\n Metti in pausa prima di procedere",
     "\r\n\r\nGraag pauseren alvorens verder te gaan"
 };
@@ -1969,7 +1980,7 @@ const char MMSG_LEVEL_HIGHT_TITLE[8][40] PROGMEM = {
 	"フィラメントの種類",
 	"Seleccione la altura del eje Z",
     "Sélectionnez la hauteur de l'axe Z",
-    "Select the Z axis height",
+    "Wähle Z-Achsen Höhe",
     "Seleziona l'altezza dell'asse Z.",
     "Selecteer de Z as hoogte"
 };
@@ -1991,7 +2002,7 @@ const char MMSG_FIRMWARE_PARAM_OPERATION[8][25] PROGMEM = {
 	"保存または復元",
 	"Guardar o restaurar",
     "Sauvegarder charger",
-    "Datei Speichern&Laden",
+    "Backup",
     "Salva e carica",
     "Opslaan&Openen"
 };
@@ -2002,7 +2013,7 @@ const char MMSG_FIRMWARE_PARAM_SAVE[8][23] PROGMEM = {
 	" TFカードに保存",
 	"  Guardar en TF",
     "Enregistrer sur TF",
-    "Auf MicroSD speichern",
+    "Auf SD speichern",
     "  Salva in TF",
     " Opslaan naar TF"
 };
@@ -2013,7 +2024,7 @@ const char MMSG_FIRMWARE_PARAM_LOAD[8][20] PROGMEM = {
 	" TFカードから回復",
 	" Cargar desde TF",
     "Charger depuis TF",
-    "Von MicroSD laden",
+    "Von SD laden",
     "  Carica da TF",
     " Openen vanaf TF"
 };
@@ -2046,7 +2057,7 @@ const char MMSG_PREVIEW_PRINT[8][13] PROGMEM = {
 	"  印刷する",
 	" Impresión",
     " Impression",
-    "   Druck",
+    "  Drucken",
     "  Stampa",
     "  Print"
 };
@@ -2315,7 +2326,7 @@ const char MMSG_IAP_FILE_DEVICE[8][45] PROGMEM = {
 	"ファイルデバイスの更新：",
 	"Actualizar dispositivo de archivo:",
     "Mettre à jour le périphérique de fichier:",
-    "Gerat lt. Update:",
+    "Gerät lt. Update:",
     "Aggiorna dispositivo file:",
     "Update bestand apparaat:"
 };
@@ -2326,18 +2337,18 @@ const char MMSG_IAP_CURRENT_DEVICE[8][24] PROGMEM = {
 	"現在のデバイス：",
 	"Dispositivo actual:",
     "Appareil actuel:",
-    "Aktuelles Gerat:",
+    "Aktuelles Gerät:",
     "Dispositivo corrente:",
     "Huidig apparaat:"
 };
 
-const char MMSG_IAP_DEVICE_NOMATCH[8][40] PROGMEM = {
+const char MMSG_IAP_DEVICE_NOMATCH[8][41] PROGMEM = {
 	"错误: 机型不匹配",
 	"Error: Device not match",
 	"エラー：デバイスが一致しません",
 	"Error: el dispositivo no coincide",
     "Erreur: l'appareil ne correspond pas",
-    "Fehler: Gerate stimmen nicht überein",
+    "Fehler: Geräte stimmen nicht überein",
     "Errore: dispositivo non corrispondente",
     "Fout: Apparaat komt niet overeen"
 };
@@ -2379,15 +2390,15 @@ const char MMSG_CONTACT_TITLE[8][22] PROGMEM = {
     "Contacteer Ons"
 };
 
-const char MMSG_CONTACT_TEXT[8][160] PROGMEM = {
-    "产品官网: www.weedo.ltd\r\nWiki网站: www.weedo3dprinter.com\r\nfacebook: www.facebook.com/Weedo3d\r\n售后邮箱: support@wiibooxtech.com",
-    "website: www.weedo.ltd\r\nwikisite: www.weedo3dprinter.com\r\nfacebook: www.facebook.com/Weedo3d\r\nemail: support@wiibooxtech.com",
-    "ウェブサイト: www.weedo.ltd\r\nwikiサイト: www.weedo3dprinter.com\r\nfacebook: www.facebook.com/Weedo3d\r\nEメール: support@wiibooxtech.com",
-    "sitio web: www.weedo.ltd\r\nsitio wiki: www.weedo3dprinter.com\r\nfacebook: www.facebook.com/Weedo3d\r\ncorreo electrónico: support@wiibooxtech.com",
-    "site Web: www.weedo.ltd\r\nwikisite: www.weedo3dprinter.com\r\nfacebook: www.facebook.com/Weedo3d\r\ncourriel: support@wiibooxtech.com",
-    "Website: www.weedo.ltd\r\nwikisite: www.weedo3dprinter.com\r\nfacebook: www.facebook.com/Weedo3d\r\nE-Mail: support@wiibooxtech.com",
-    "sito web: www.weedo.ltd\r\nwikisite: www.weedo3dprinter.com\r\nfacebook: www.facebook.com/Weedo3d\r\ne-mail: support@wiibooxtech.com",
-    "website: www.weedo.ltd\r\nwikisite: www.weedo3dprinter.com\r\nfacebook: www.facebook.com/Weedo3d\r\nemail: support@wiibooxtech.com\r\n"
+const char MMSG_CONTACT_TEXT[8][205] PROGMEM = {
+    "产品官网: www.weedo.ltd\r\nWiki网站: www.weedo3dprinter.com\r\nfacebook: www.facebook.com/Weedo3d\r\n售后邮箱: support@wiibooxtech.com\r\nX40 PRO website: www.x40-community.org",
+    "website: www.weedo.ltd\r\nwikisite: www.weedo3dprinter.com\r\nfacebook: www.facebook.com/Weedo3d\r\nemail: support@wiibooxtech.com\r\nX40 PRO website: www.x40-community.org",
+    "ウェブサイト: www.weedo.ltd\r\nwikiサイト: www.weedo3dprinter.com\r\nfacebook: www.facebook.com/Weedo3d\r\nEメール: support@wiibooxtech.com\r\nX40 PRO website: www.x40-community.org",
+    "sitio web: www.weedo.ltd\r\nsitio wiki: www.weedo3dprinter.com\r\nfacebook: www.facebook.com/Weedo3d\r\ncorreo electrónico: support@wiibooxtech.com\r\nsitio web X40 PRO: www.x40-community.org",
+    "site Web: www.weedo.ltd\r\nwikisite: www.weedo3dprinter.com\r\nfacebook: www.facebook.com/Weedo3d\r\ncourriel: support@wiibooxtech.com\r\nsite Web X40 PRO: www.x40-community.org",
+    "Website: www.weedo.ltd\r\nwikisite: www.weedo3dprinter.com\r\nfacebook: www.facebook.com/Weedo3d\r\nE-Mail: support@wiibooxtech.com\r\nX40 PRO Website: www.x40-community.org",
+    "sito web: www.weedo.ltd\r\nwikisite: www.weedo3dprinter.com\r\nfacebook: www.facebook.com/Weedo3d\r\ne-mail: support@wiibooxtech.com\r\nsite web X40 PRO: www.x40-community.org",
+    "website: www.weedo.ltd\r\nwikisite: www.weedo3dprinter.com\r\nfacebook: www.facebook.com/Weedo3d\r\nemail: support@wiibooxtech.com\r\nwebsite X40 PRO: www.x40-community.org"
 };
 
 
@@ -2497,7 +2508,7 @@ const char MMSG_NOZZLE_OFFSET_TITLE[8][38] PROGMEM = {
     "ダブルノズルオフセット調整",
 	"Desplazamiento de la boquilla",
     "Réglage du décalage de la buse",
-    "Düsenversatzjustierung (Offset)",
+    "Düsenversatzjustierung",
     "Regolazione dell'offset degli ugelli",
     "Printkop Afstand Aanpassing"
 };
@@ -2508,7 +2519,7 @@ const char MMSG_NOZZLE_X_OFFSET[8][20] PROGMEM = {
 	"XYオフセット粗調整",
 	"XY Melodía Gruesa",
     "XY gros morceau",
-    "XY Grobabstimmung",
+    "XY Grobeinstel.",
     "XY Coarse Tune",
     "XY Grove Afstelling"
 };
@@ -2552,7 +2563,7 @@ const char MMSG_NOZZLE_X_TEXT[8][190] PROGMEM = {
  	"ファイルNozzleCoarseTune.gcodeファイルを印刷します\r\n2つのレイヤーの水平方向の偏差が最も小さいテストブロックの番号を選択し,[次へ]をクリックします.",
 	"Imprima el archivo Nozzle CourseTune.gcode. Seleccione el número en el bloque con la desviación horizontal más pequena y haga clic en Siguiente.",
     "Imprimez le fichier NozzleCoarseTune.gcode\r\nSélectionnez le numéro sur le bloc avec le plus petit écart horizontal et cliquez sur Suivant.",
-    "Drucken Sie die Datei NozzleCoarseTune.gcode\r\nWahlen Sie anschliebend die Nummer des Blocks mit der geringsten horizontalen Abweichung und klicken Sie auf Fortfahren.",
+    "Drucken Sie die Datei NozzleCoarseTune.gcode\r\nWaehlen Sie anschliebend die Nummer des Blocks mit der geringsten horizontalen Abweichung und klicken Sie auf Fortfahren.",
     "Stampa il file NozzleCoarseTune.gcode\r\nSelezionare il numero sul blocco con la deviazione orizzontale più piccola e fare clic su Avanti.",
     "Print het bestand NozzleCoarseTune.gcode.\r\nSelecteer het nummer van het blokje met de kleinste horizontale afwijking en klik op Volgende."
 };
@@ -2574,7 +2585,7 @@ const char MMSG_NOZZLE_Y1_TEXT[8][180] PROGMEM = {
  	"NozzleFintTune.gcodeファイルを印刷します\r\n2つのレイヤーの水平方向の偏差が最も小さいテストブロックの番号を選択し,[次へ]をクリックします.",
 	"Imprima el archivo NozzleFintTune.gcode. Seleccione el número en el bloque con la desviación horizontal más pequena y haga clic en Siguiente.",
     "Imprimez le fichier NozzleFintTune.gcode. Sélectionnez le numéro sur le bloc avec le plus petit écart horizontal et cliquez sur Suivant.",
-    "Drucken Sie die Datei NozzleFintTune.gcode. Wahlen Sie anschliebend die Nummer des Blocks mit der geringsten horizontalen Abweichung und klicken Sie auf Fortfahren.",
+    "Drucken Sie die Datei NozzleFintTune.gcode. Waehlen Sie anschliebend die Nummer des Blocks mit der geringsten horizontalen Abweichung und klicken Sie auf Fortfahren.",
     "Stampa il file NozzleFintTune.gcode. Selezionare il numero sul blocco con la deviazione orizzontale più piccola e fare clic su Avanti.",
     "Print het bestand NozzleFineTune.gcode. Selecteer het nummer van het blokje met de kleinste horizontale afwijking en klik op Volgende."
 };
@@ -2585,7 +2596,7 @@ const char MMSG_NOZZLE_Y2_TEXT[8][150] PROGMEM = {
  	"2つの垂直レイヤー間の偏差が最も小さいテストブロックの番号を選択し, [保存]をクリックして設定を完了します.",
 	"Seleccione el número en el bloque con la desviación más pequena entre las dos capas verticales y Guardar.",
     "Sélectionnez le numéro sur le bloc présentant le plus petit écart entre les deux couches verticales et enregistrez.",
-    "Wahlen Sie die Nummer des Blocks mit der geringsten Abweichung zwischen den beiden vertikalen Schichten und klicken Sie auf Speichern.",
+    "Waehlen Sie die Nummer des Blocks mit der geringsten Abweichung zwischen den beiden vertikalen Schichten und klicken Sie auf Speichern.",
     "Seleziona il numero sul blocco con la deviazione più piccola tra i due strati verticali e Salva.",
     "Selecteer het nummer van het blokje met de kleinste afwijking tussen de twee vertikale lagen en kies Opslaan."
 };
@@ -2607,7 +2618,7 @@ const char MMSG_NOZZLE_Z_TEXT1[8][320] PROGMEM = {
 	"キャリブレーションの前に, フィラメントをダブルノズルにロードしてから, ノズルを清掃してください. ノズルが冷えたら, ノズル右側の固定メーターを緩め, ノズルを上に押し上げてメーターをロックします. ベッドの上に紙を用意します. すべての準備ができたら, [開始]をクリックします.",
 	"Antes de la calibración, cargue los filamentos en las boquillas dobles y luego limpie las boquillas. Después de que la boquilla se haya enfriado, afloje el medidor fijo en el lado derecho de las boquillas, empuje las boquillas hacia arriba y bloquee el medidor. Prepara un papel sobre la cama.",
 	"Avant l'étalonnage, veuillez charger les filaments dans les buses doubles, puis nettoyer les buses. Une fois la buse refroidie, desserrez le compteur fixe sur le coté droit des buses, poussez les buses vers le haut et verrouillez le compteur. Préparez un papier sur le lit.",
-	"Laden Sie vor der Kalibrierung die Filamente in die Doppeldüsen und reinigen Sie die Düsen. Losen Sie nach dem Abkühlen der Düse das feste Messgerat auf der rechten Seite der Düsen, schieben Sie die Düsen nach oben und verriegeln Sie das Messgerat. Bereiten Sie ein Papier auf dem Bett vor.",
+	"Laden Sie vor der Kalibrierung die Filamente in die Doppeldüsen und reinigen Sie die Düsen. Losen Sie nach dem Abkühlen der Düse das feste Messgerat auf der rechten Seite der Düsen, schieben Sie die Düsen nach oben und verriegeln Sie das Messgerät. Bereiten Sie ein Papier auf dem Bett vor.",
 	"Prima della calibrazione, caricare i filamenti nei doppi ugelli, quindi pulire gli ugelli. Dopo che l'ugello si è raffreddato, allentare il misuratore fisso sul lato destro degli ugelli, spingere gli ugelli verso l'alto e bloccare lo strumento. Prepara un foglio sul letto.",
 	"Laad vóór de kalibratie de filamenten in de dubbele spuitmonden en reinig vervolgens de spuitmonden. Nadat het mondstuk is afgekoeld, maakt u de vaste meter aan de rechterkant van de mondstukken los, drukt u de spuitmonden naar boven en vergrendelt u de meter. Leg een papier op het bed."
 };
@@ -2618,7 +2629,7 @@ const char MMSG_NOZZLE_Z_TEXT2[8][180] PROGMEM = {
     "ノズルとプラットフォーム間のギャップが紙の厚さになるまで, Z軸の高さを微調整してください. \r\n次へをクリックして続けます.",
 	"Ajuste la altura del eje z hasta que el espacio entre la boquilla y la plataforma tenga el grosor de una hoja de papel. Haga clic en Siguiente para continuar.",
     "Veuillez ajuster la hauteur de l'axe z jusqu'à ce que l'écart entre la buse et la plate-forme soit l'épaisseur de chaque papier.\r\nCliquer sur Suivant pour continuer.",
-    "Bitte justieren Sie die Hohe der Z-Achse bis der Abstand zwischen Druckbett und Düse nahezu der Papierdicke entspricht.\r\nFür den nachsten Schritt klicken Sie auf Fortfahren.",
+    "Bitte justieren Sie die Höhe der Z-Achse bis der Abstand zwischen Druckbett und Düse nahezu der Papierdicke entspricht.\r\nFür den nachsten Schritt klicken Sie auf Fortfahren.",
     "Si prega di regolare l'altezza dell'asse z fino a quando lo spazio tra l'ugello e la piattaforma è lo spessore di un pezzo di carta.\r\nFare clic su Avanti per continuare.",
     "Pas de hoogte van de Z as aan totdat de afstand tussen de spuitmond en het print platform gelijk is aan de dikte van het papier.\r\nKlik op Verder om door te gaan."
 };
@@ -2629,7 +2640,7 @@ const char MMSG_NOZZLE_Z_TEXT3[8][290] PROGMEM = {
 	"右側のノズルの右側にある固定式のマシンメーターを緩め, フィラメントを押出機から引き出してノズルを押して紙に接触させてから, マシンメーターをロックします.  終了したら, [次へ]をクリックします. ",
 	"Afloje el medidor fijo de la máquina en el lado derecho de la boquilla derecha, arrastre el filamento fuera de la extrusora para empujar la boquilla para que entre en contacto con el papel y luego bloquee el medidor de la máquina. Haga clic en Siguiente cuando termine.",
 	"Desserrez le compteur fixe de la machine sur le coté droit de la buse droite, faites glisser le filament hors de l'extrudeuse pour pousser la buse au contact du papier, puis verrouillez le compteur de la machine. Cliquez sur Suivant lorsque vous avez terminé.",
-	"Losen Sie das feste Maschinenmessgerat auf der rechten Seite der rechten Düse, ziehen Sie das Filament aus dem Extruder, um die Düse auf den Kontakt mit dem Papier zu drücken, und verriegeln Sie dann das Maschinenmessgerat. Klicken Sie auf Weiter, wenn Sie fertig sind.",
+	"Lösen Sie das feste Maschinenmessgerät auf der rechten Seite der rechten Düse, ziehen Sie das Filament aus dem Extruder, um die Düse auf den Kontakt mit dem Papier zu drücken, und verriegeln Sie dann das Maschinenmessgerät. Klicken Sie auf Weiter, wenn Sie fertig sind.",
 	"Allentare il misuratore fisso della macchina sul lato destro dell'ugello destro, trascinare il filamento fuori dall'estrusore per spingere l'ugello a contatto con la carta, quindi bloccare il misuratore della macchina. Fare clic su Avanti al termine.",
 	"Maak de vaste machinemeter aan de rechterkant van de rechtermondstuk los, sleep het filament uit de extruder om het mondstuk in contact te brengen met het papier, en vergrendel vervolgens de machinemeter. Klik op Volgende als u klaar bent."
 };
@@ -2640,7 +2651,7 @@ const char MMSG_NOZZLE_Z_TEXT4[8][290] PROGMEM = {
 	"左側のノズルの右側にある固定式のマシンメーターを緩め, フィラメントを押出機からドラッグしてノズルを押して紙に接触させてから, マシンメーターをロックします. 終了したら, [次へ]をクリックします.",
 	"Afloje el medidor fijo de la máquina en el lado derecho de la boquilla izquierda, arrastre el filamento fuera de la extrusora para empujar la boquilla para que entre en contacto con el papel y luego bloquee el medidor de la máquina. Haga clic en Siguiente cuando termine.",
 	"Desserrez le compteur fixe de la machine sur le coté droit de la buse gauche, faites glisser le filament hors de l'extrudeuse pour pousser la buse au contact du papier, puis verrouillez le compteur de la machine. Cliquez sur Suivant lorsque vous avez terminé.",
-	"Losen Sie das feste Maschinenmessgerat auf der rechten Seite der linken Düse, ziehen Sie das Filament aus dem Extruder, um die Düse auf den Kontakt mit dem Papier zu drücken, und verriegeln Sie dann das Maschinenmessgerat. Klicken Sie auf Weiter, wenn Sie fertig sind.",
+	"Lösen Sie das feste Maschinenmessgerät auf der rechten Seite der linken Düse, ziehen Sie das Filament aus dem Extruder, um die Düse auf den Kontakt mit dem Papier zu drücken, und verriegeln Sie dann das Maschinenmessgerät. Klicken Sie auf Weiter, wenn Sie fertig sind.",
 	"Allentare il misuratore fisso della macchina sul lato destro dell'ugello sinistro, trascinare il filamento fuori dall'estrusore per spingere l'ugello a contatto con la carta, quindi bloccare il misuratore della macchina. Fare clic su Avanti al termine.",
 	"Maak de vaste machinemeter aan de rechterkant van het linkermondstuk los, sleep het filament uit de extruder om het mondstuk in contact te brengen met het papier en vergrendel vervolgens de machinemeter. Klik op Volgende als u klaar bent."
 };
@@ -2712,14 +2723,14 @@ const char MMSG_BABYSTEP_TITLE[8][30]  = {
 };
 
 const char MMSG_BABYSTEP_TIP[8][210] = {
-	"点击按钮，可以按0.05mm间隔微调喷头高度.\r\n请谨慎使用该功能, 以防损坏模型或打印机.",
-	"Click the button to fine-tune the height of the nozzle in 0.05mm intervals. Please use this function carefully to prevent damage to the model or printer.",
-	"ボタンをクリックして, ノズルの高さを0.05mm間隔で微調整します. モデルやプリンターの損傷を防ぐため, この機能を慎重に使用してください.",
-	"Haga clic en el botón para ajustar la altura de la boquilla en intervalos de 0,05 mm. Utilice esta función con cuidado para evitar da?os en el modelo o la impresora.",
-	"Cliquez sur le bouton pour régler avec précision la hauteur de la buse par intervalles de 0,05 mm. Veuillez utiliser cette fonction avec précaution pour éviter d'endommager le modèle ou l'imprimante.",
-	"Klicken Sie auf die Schaltfl?che, um die H?he der Düse in Intervallen von 0,05 mm fein einzustellen. Bitte verwenden Sie diese Funktion sorgf?ltig, um Sch?den am Modell oder Drucker zu vermeiden.",
-	"Fare clic sul pulsante per regolare con precisione l'altezza dell'ugello a intervalli di 0,05 mm. Utilizzare questa funzione con attenzione per evitare danni al modello o alla stampante.",
-	"Klik op de knop om de hoogte van het mondstuk in stappen van 0,05 mm af te stellen. Gebruik deze functie zorgvuldig om schade aan het model of de printer te voorkomen."
+	"点击按钮，可以按0.02mm间隔微调喷头高度.\r\n请谨慎使用该功能, 以防损坏模型或打印机.",
+	"Click the button to fine-tune the height of the nozzle in 0.02mm intervals. Please use this function carefully to prevent damage to the model or printer.",
+	"ボタンをクリックして, ノズルの高さを0.02mm間隔で微調整します. モデルやプリンターの損傷を防ぐため, この機能を慎重に使用してください.",
+	"Haga clic en el botón para ajustar la altura de la boquilla en intervalos de 0,02 mm. Utilice esta función con cuidado para evitar da?os en el modelo o la impresora.",
+	"Cliquez sur le bouton pour régler avec précision la hauteur de la buse par intervalles de 0,02 mm. Veuillez utiliser cette fonction avec précaution pour éviter d'endommager le modèle ou l'imprimante.",
+	"Klicken Sie auf die Schaltfläche, um die Höhe der Düse in Intervallen von 0,02 mm fein einzustellen. Bitte verwenden Sie diese Funktion sorgfältig, um Schäden am Modell oder Drucker zu vermeiden.",
+	"Fare clic sul pulsante per regolare con precisione l'altezza dell'ugello a intervalli di 0,02 mm. Utilizzare questa funzione con attenzione per evitare danni al modello o alla stampante.",
+	"Klik op de knop om de hoogte van het mondstuk in stappen van 0,02 mm af te stellen. Gebruik deze functie zorgvuldig om schade aan het model of de printer te voorkomen."
 };
 
 const char MMSG_SETTING_AUTOSWITCH[8][30]  = {
@@ -2739,7 +2750,7 @@ const char MMSG_SETTING_MANUALSWITCH[8][30]  = {
 	"  手動スイッチ",
 	"    Manual",
     "    Manuel",
-    "   Handbuch",
+    " Düsenwechsel",
     "   Manuale",
 	"  Handleiding"
 };

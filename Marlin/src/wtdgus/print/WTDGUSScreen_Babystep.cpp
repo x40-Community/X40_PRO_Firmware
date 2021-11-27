@@ -9,7 +9,7 @@
 #include "../WTDGUSManager.h"
 #include "../../feature/babystep.h"
 
-#define BABYSTEP_Z_DRIFT    0.05
+#define BABYSTEP_Z_DRIFT    0.02
 
 void DGUS_Screen_Babystep::Init()
 {

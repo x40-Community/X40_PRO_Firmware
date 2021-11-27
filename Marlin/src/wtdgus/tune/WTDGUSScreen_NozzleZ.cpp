@@ -137,15 +137,15 @@ void DGUS_Screen_Nozzle_Z::KeyProcess()
 			}
 			else if (gltouchpara.value == KEY_ZOFFSET_DEC)
 			{
-				zoffset_current -= 0.1;
-				current_position[Z_AXIS] -= 0.1;
+				zoffset_current -= 0.04;
+				current_position[Z_AXIS] -= 0.04;
 				manual_move_to_current(Z_AXIS);
 				ShowZOffset();
 			}
 			else if (gltouchpara.value == KEY_ZOFFSET_ADD)
 			{
-				zoffset_current += 0.1;
-				current_position[Z_AXIS] += 0.1;
+				zoffset_current += 0.04;
+				current_position[Z_AXIS] += 0.04;
 				manual_move_to_current(Z_AXIS);
 				ShowZOffset();
 			}

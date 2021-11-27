@@ -90,15 +90,16 @@ void DGUS_Screen_ZOffset::KeyProcess()
 			{
 				probe.offset.z = zoffset_current;
 				(void)settings.save();
-				queue.enqueue_one_now("G1 Z200 F2000");
+				queue.enqueue_one_now("G1 Z50 F2000");
+				queue.enqueue_one_now("G1 X-47 F2000");
 				Goback();
 
 			}
 			else if (gltouchpara.value == KEY_ZOFFSET_DEC)
 			{
-				zoffset_current -= 0.1;
+				zoffset_current -= 0.04;
 				if (zoffset_current >= -9.9) 
-					current_position[Z_AXIS] -= 0.1;
+					current_position[Z_AXIS] -= 0.04;
 				else
 					zoffset_current = -9.9;
 				manual_move_to_current(Z_AXIS);
@@ -106,9 +107,9 @@ void DGUS_Screen_ZOffset::KeyProcess()
 			}
 			else if (gltouchpara.value == KEY_ZOFFSET_ADD)
 			{
-				zoffset_current += 0.1;
+				zoffset_current += 0.04;
 				if (zoffset_current <= 9.9)
-					current_position[Z_AXIS] += 0.1;
+					current_position[Z_AXIS] += 0.04;
 				else
 					zoffset_current = 9.9;
 				manual_move_to_current(Z_AXIS);

@@ -38,11 +38,11 @@
  */
 #define CONFIGURATION_H_VERSION 020005
 
-#define SHORT_BUILD_VERSION "1.2.0"
+#define SHORT_BUILD_VERSION "1.2.0.1"
 
 #define HARDWARE_VERSION "R73B"
 
-#define MACHINE_NAME "X40"
+#define MACHINE_NAME "X40 PRO"
 
 /**
  * Select the serial port on the board to use for communication with the host.
@@ -194,12 +194,13 @@
 //#define TEMP_SENSOR_1_AS_REDUNDANT
 #define MAX_REDUNDANT_TEMP_SENSOR_DIFF 10
 
-#define TEMP_RESIDENCY_TIME     10  // (seconds) Time to wait for hotend to "settle" in M109
-#define TEMP_WINDOW              1  // (°C) Temperature proximity for the "temperature reached" timer
+// Weedo Value TEMP_RESIDENCY_TIME 10
+#define TEMP_RESIDENCY_TIME      5  // (seconds) Time to wait for hotend to "settle" in M109
+#define TEMP_WINDOW              2  // (°C) Temperature proximity for the "temperature reached" timer
 #define TEMP_HYSTERESIS          3  // (°C) Temperature proximity considered "close enough" to the target
 
 #define TEMP_BED_RESIDENCY_TIME 10  // (seconds) Time to wait for bed to "settle" in M190
-#define TEMP_BED_WINDOW          1  // (°C) Temperature proximity for the "temperature reached" timer
+#define TEMP_BED_WINDOW          2  // (°C) Temperature proximity for the "temperature reached" timer
 #define TEMP_BED_HYSTERESIS      3  // (°C) Temperature proximity considered "close enough" to the target
 
 // Below this temperature the heater will be switched off
@@ -249,9 +250,15 @@
                                   // is more than PID_FUNCTIONAL_RANGE then the PID will be shut off and the heater will be set to min/max.
 
   // X40
-  #define DEFAULT_Kp 12.2
-  #define DEFAULT_Ki 0.77
-  #define DEFAULT_Kd 48.41
+  // Original Weedo #define DEFAULT_Kp 12.2
+  // Original Weedo #define DEFAULT_Ki 0.77
+  // Priginal Weedo #define DEFAULT_Kd 48.41
+
+  // Weedo X40 with X40 Community Coolingsystem
+  #define DEFAULT_Kp 13.32
+  #define DEFAULT_Ki 0.98
+  #define DEFAULT_Kd 45.13
+
 
 #endif // PIDTEMP
 
@@ -419,7 +426,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 94.14, 94.14, 400, 93}
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 94.90, 94.90, 400, 93}
 
 /**
  * Default Max Feed Rate (mm/s)

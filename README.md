@@ -1,4 +1,4 @@
-# X40 PRO Community Firmware for Weedo X40
+# WEEDO X40 Community Firmware
 ![image](http://www.weedo.ltd/wp-content/uploads/2021/04/970x300-ABanner1.jpg)
 
 ## Summary
@@ -41,6 +41,6 @@ The official firmware has the function of upgrading the firmware via TF card. Us
 The community version firmware does not support the wfm format, so it does not support firmware upgrade via TF card.
 
 
-## Return to the official version firmware
+## Return to the official vesrion firmware
 
 Use WEEDOIAP.exe to flash X40_Vxxx_Community_to_Official.bin in the /Release directory.

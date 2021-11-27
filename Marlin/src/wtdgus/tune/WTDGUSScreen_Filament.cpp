@@ -29,9 +29,10 @@ void DGUS_Screen_Filament::Init()
 	dserial.SendString(ADDR_LANG_ITEM1_TEXT, MMSG_FILAMENT_TYPE_NAME1, 30);
 	dserial.SendString(ADDR_LANG_ITEM2_TEXT, MMSG_FILAMENT_TYPE_NAME2, 30);
 	dserial.SendString(ADDR_LANG_ITEM3_TEXT, MMSG_FILAMENT_TYPE_NAME4, 30);
-	dserial.SendString(ADDR_LANG_ITEM4_TEXT, MMSG_FILAMENT_TYPE_NAME3[wtvar_language], 30);
-	dserial.SendString(ADDR_LANG_ITEM5_TEXT, MMSG_EMPTY, 30);
-	dserial.SendString(ADDR_LANG_ITEM6_TEXT, MMSG_EMPTY, 30);
+	dserial.SendString(ADDR_LANG_ITEM4_TEXT, MMSG_FILAMENT_TYPE_NAME3, 30);
+	dserial.SendString(ADDR_LANG_ITEM5_TEXT, MMSG_FILAMENT_TYPE_NAME5, 30);
+	dserial.SendString(ADDR_LANG_ITEM6_TEXT, MMSG_FILAMENT_TYPE_NAME6, 30);
+
 
 	heattime = 100;
 	filamentType = FT_PLA;
@@ -71,36 +72,57 @@ void DGUS_Screen_Filament::Update()
 		dserial.SendString(ADDR_FILAMENT_TEXT_LINE1, MMSG_FILAMENT_IN_LINE1[wtvar_language], 40);
 		dserial.SendString(ADDR_FILAMENT_BUTTON_RETURN, MMSG_BACK[wtvar_language], 20);
 
-		if (filamentType == FT_PLA)
+		if (filamentType == FT_NONOILEN)
 		{
 			dserial.SendString(ADDR_FILAMENT_TEXT_TEMP, MMSG_FILAMENT_TYPE_TEMP1, 8);
             if (act_extruder == ACTIVE_LEFT)
-			    queue.enqueue_now_P("M104 T0 S210");
+			    queue.enqueue_now_P("M104 T0 S200");
             else
-                queue.enqueue_now_P("M104 T1 S210");
-			targetTemp = 210;
+                queue.enqueue_now_P("M104 T1 S200");
+			targetTemp = 200;
 		}
-		else if (filamentType == FT_ABS)
+
+		else if (filamentType == FT_PLA)
 		{
 			dserial.SendString(ADDR_FILAMENT_TEXT_TEMP, MMSG_FILAMENT_TYPE_TEMP2, 8);
             if (act_extruder == ACTIVE_LEFT)
-			    queue.enqueue_now_P("M104 T0 S235");
+			    queue.enqueue_now_P("M104 T0 S220");
             else
-                queue.enqueue_now_P("M104 T1 S235");
-			targetTemp = 235;
+                queue.enqueue_now_P("M104 T1 S220");
+			targetTemp = 220;
 		}
+
 		else if (filamentType == FT_TPU)
+		{
+			dserial.SendString(ADDR_FILAMENT_TEXT_TEMP, MMSG_FILAMENT_TYPE_TEMP3, 8);
+            if (act_extruder == ACTIVE_LEFT)
+			    queue.enqueue_now_P("M104 T0 S230");
+            else
+                queue.enqueue_now_P("M104 T1 S230");
+			targetTemp = 230;
+		}
+
+		else if (filamentType == FT_PETG)
 		{
 			dserial.SendString(ADDR_FILAMENT_TEXT_TEMP, MMSG_FILAMENT_TYPE_TEMP4, 8);
             if (act_extruder == ACTIVE_LEFT)
 			    queue.enqueue_now_P("M104 T0 S240");
             else
                 queue.enqueue_now_P("M104 T1 S240");
-			targetTemp = 235;
+			targetTemp = 240;
 		}
-		else if (filamentType == FT_OTHER)
+		else if (filamentType == FT_ASA)
 		{
-			dserial.SendString(ADDR_FILAMENT_TEXT_TEMP, MMSG_FILAMENT_TYPE_TEMP3, 8);
+			dserial.SendString(ADDR_FILAMENT_TEXT_TEMP, MMSG_FILAMENT_TYPE_TEMP5, 8);
+            if (act_extruder == ACTIVE_LEFT)
+			    queue.enqueue_now_P("M104 T0 S250");
+            else
+                queue.enqueue_now_P("M104 T1 S250");
+			targetTemp = 250;
+		}
+		else if (filamentType == FT_PCTG)
+		{
+			dserial.SendString(ADDR_FILAMENT_TEXT_TEMP, MMSG_FILAMENT_TYPE_TEMP6, 8);
             if (act_extruder == ACTIVE_LEFT)
 			    queue.enqueue_now_P("M104 T0 S260");
             else
@@ -158,23 +180,31 @@ void DGUS_Screen_Filament::Update()
 			}
 			dserial.SendString(ADDR_FILAMENT_TEXT_LINE2, MMSG_FILAMENT_OUT_LINE2[wtvar_language], 40);
 
-			if (filamentType == FT_PLA)
+			if (filamentType == FT_NONOILEN)
 			{
-				queue.enqueue_now_P("M104 S210");
+				queue.enqueue_now_P("M104 S200");
 			}
-			else if (filamentType == FT_ABS)
+			else if (filamentType == FT_PLA)
 			{
-				queue.enqueue_now_P("M104 S235");
+				queue.enqueue_now_P("M104 S220");
 			}
 			else if (filamentType == FT_TPU)
 			{
+				queue.enqueue_now_P("M104 S230");
+			}
+			else if (filamentType == FT_PETG)
+			{
 				queue.enqueue_now_P("M104 S240");
 			}
-			else if (filamentType == FT_OTHER)
+			else if (filamentType == FT_ASA)
+			{
+				queue.enqueue_now_P("M104 S250");
+			}
+			else if (filamentType == FT_PCTG)
 			{
 				queue.enqueue_now_P("M104 S260");
 			}
-			
+
 			filaopsts = FSSE_LOADING;
 		}
 		
@@ -235,13 +265,13 @@ void DGUS_Screen_Filament::KeyProcess()
 			}
 			else if (gltouchpara.value == KEY_LANG_ITEM1)
 			{
-				filamentType = FT_PLA;
+				filamentType = FT_NONOILEN;
 				filaopsts = FSSE_CHOICE_EXTRUDER;
 				Update();
 			}
 			else if (gltouchpara.value == KEY_LANG_ITEM2)
 			{
-				filamentType = FT_ABS;
+				filamentType = FT_PLA;
 				filaopsts = FSSE_CHOICE_EXTRUDER;
 				Update();
 			}
@@ -253,7 +283,21 @@ void DGUS_Screen_Filament::KeyProcess()
 			}
 			else if (gltouchpara.value == KEY_LANG_ITEM4)
 			{
-				filamentType = FT_OTHER;
+				filamentType = FT_PETG;
+				filaopsts = FSSE_CHOICE_EXTRUDER;
+				Update();
+			}
+
+			else if (gltouchpara.value == KEY_LANG_ITEM5)
+			{
+				filamentType = FT_ASA;
+				filaopsts = FSSE_CHOICE_EXTRUDER;
+				Update();
+			}
+			
+			else if (gltouchpara.value == KEY_LANG_ITEM6)
+			{
+				filamentType = FT_PCTG;
 				filaopsts = FSSE_CHOICE_EXTRUDER;
 				Update();
 			}

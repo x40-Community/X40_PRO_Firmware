@@ -32,13 +32,13 @@ void DGUS_Screen_Speed::Init()
 
 	if (feedrate_percentage < 50)
 		ShowButtonOn(1);
-	else if (feedrate_percentage < 100)
+	else if (feedrate_percentage < 75)
 		ShowButtonOn(2);
-	else if (feedrate_percentage < 200)
+	else if (feedrate_percentage < 100)
 		ShowButtonOn(3);
-	else if (feedrate_percentage < 400)
+	else if (feedrate_percentage < 125)
 		ShowButtonOn(4);
-	else if (feedrate_percentage < 600)
+	else if (feedrate_percentage < 150)
 		ShowButtonOn(5);
 	else 
 		ShowButtonOn(6);
@@ -79,22 +79,22 @@ void DGUS_Screen_Speed::KeyProcess()
 			}
 			else if (gltouchpara.value == KEY_SPEED_BUTTON_ITEM3)
 			{	
-				temp_feedrate = 100;
+				temp_feedrate = 75;
 				ShowButtonOn(3);
 			}
 			else if (gltouchpara.value == KEY_SPEED_BUTTON_ITEM4)
 			{
-				temp_feedrate = 200;
+				temp_feedrate = 100;
 				ShowButtonOn(4);
 			}
 			else if (gltouchpara.value == KEY_SPEED_BUTTON_ITEM5)
 			{
-				temp_feedrate = 400;
+				temp_feedrate = 125;
 				ShowButtonOn(5);
 			}
 			else if (gltouchpara.value == KEY_SPEED_BUTTON_ITEM6)
 			{
-				temp_feedrate = 600;
+				temp_feedrate = 150;
 				ShowButtonOn(6);
 			}
 			else if (gltouchpara.value == KEY_SPEED_BUTTON_HELP)
