@@ -133,13 +133,13 @@ const char MMSG_ERROR_TITLE[8][8] PROGMEM = {
     "Fout"
 };
 
-const char MMSG_NOTICE_TITLE[8][11] PROGMEM = {
+const char MMSG_NOTICE_TITLE[8][12] PROGMEM = {
 	"提示",			
 	"Notice",
 	"通知",
 	"Notar",
     "Remarquer",
-    "Anmerkung",
+    "Information",
     "Avviso",
     "Let op"
 };
@@ -1279,7 +1279,7 @@ const char MMSG_ZOFFSET_LINE[8][440] PROGMEM = {
 	"Z軸オフセットを使用して, ノズルとプラットフォーム間のギャップを微調整します. ノズルの下に配置する紙を準備します. ボタンをクリックして, ギャップが紙の厚さになるまでプラットフォームを上下に移動します. \r\n終了したら、[保存]をクリックして終了します.",
 	"eje Z desplazamiento de recorte para la boquilla hueco y la plataforma. Preparar una hoja de papel colocado bajo la cabeza. Haga clic en la mesa de movimiento fino vertical, un espesor de la brecha hasta una hoja de papel. Cuando termine, haga clic en Guardar para salir.",
     "Le décalage de l'axe Z est utilisé pour régler l'écart entre la buse et la plate-forme. Préparez un morceau de papier à placer sous la buse. Cliquez sur le bouton pour déplacer la plate-forme vers le haut et vers le bas jusqu'à ce que l'espace ait la même épaisseur qu'un morceau de papier. Cliquez après avoir terminé Enregistrer et quitter.",
-    "Die Einstellung des Z-Versatzes (Offset) ist nötig, um den Abstand zwischen Düse und Druckplattform genau abzustimmen. Bereiten Sie ein Blatt normales (Schreib)Papier vor, welches Sie zwischen Düse und Druckbett positionieren. Drücken Sie anschliebend die entsprechende Schaltflache, um die Düse auf und ab zu bewegen, bis der Abstand gerade die Dicke des Papiers hat.  Wenn Sie fertig sind klicken Sie auf Speichern und Schliessen.",
+    "Die Einstellung des Z-Versatzes (Offset) ist noetig, um den Abstand zwischen Düse und Druckplattform genau abzustimmen. Bereiten Sie ein Blatt normales Schreibpapier vor, welches Sie zwischen Düse und Druckbett positionieren. Drücken Sie anschliebend die entsprechende Schaltflache, um die Düse auf und ab zu bewegen, bis der Abstand gerade die Dicke des Papiers hat.  Wenn Sie fertig sind klicken Sie auf Speichern und Schliessen.",
     "L'offset dell'asse Z viene utilizzato per regolare la distanza tra l'ugello e la piattaforma. Preparare un foglio di carta da posizionare sotto la bocchetta. Fare clic sul pulsante per spostare la piattaforma su e giù fino a quando lo spazio è lo spessore di un pezzo di carta. Fare clic dopo aver terminato Salva ed esci.",
     "De Z-as marge wordt gebruikt om de afstand tussen de printkop en het printbed te fine tunen. Gebruik een stukje normaal printpapier om onder de printkop te schuiven.\r\nGebruik de knoppen om de hoogte aan te passen totdat de afstand tussen printkop en printbed gelijk is aan de dikte van het papier. Daarna Opslaan en Afsluiten."
 };
@@ -1694,7 +1694,7 @@ const char MMSG_SKIP[8][16] PROGMEM = {
  	" スキップ",
 	"  Saltar",
     "  Sauter",
-    "Überspringen",
+    "乁eberspringen",
     "  Salta",
     " Overslaan"
 };

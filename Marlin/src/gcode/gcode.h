@@ -262,6 +262,8 @@
  * M916 - L6470 tuning: Increase KVAL_HOLD until thermal warning. (Requires at least one _DRIVER_TYPE L6470)
  * M917 - L6470 tuning: Find minimum current thresholds. (Requires at least one _DRIVER_TYPE L6470)
  * M918 - L6470 tuning: Increase speed until max or error. (Requires at least one _DRIVER_TYPE L6470)
+ * M922 - Enable/disable/query auto purge on tool-change
+ * M923: Enable/disable/query multiwipe on tool-change
  * M951 - Set Magnetic Parking Extruder parameters. (Requires MAGNETIC_PARKING_EXTRUDER)
  * M7219 - Control Max7219 Matrix LEDs. (Requires MAX7219_GCODE)
  *
@@ -970,6 +972,11 @@ private:
 
   #if ENABLED(MAX7219_GCODE)
     static void M7219();
+  #endif
+
+  #if MOTHERBOARD == BOARD_WEEDO_73B
+    static void M922();
+    static void M923();
   #endif
 
   static void T(const uint8_t tool_index);

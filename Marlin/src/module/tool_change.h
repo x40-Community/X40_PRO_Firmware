@@ -34,6 +34,9 @@
     #if ENABLED(TOOLCHANGE_PARK)
       xy_pos_t change_point;
     #endif
+    #if MOTHERBOARD == BOARD_WEEDO_73B
+      uint8_t x40_toolchange_config;
+    #endif
     float z_raise;
   } toolchange_settings_t;
 
@@ -92,7 +95,7 @@
     extern uint8_t singlenozzle_fan_speed[EXTRUDERS];
   #endif
 #endif
-
+   
 #if ENABLED(ELECTROMAGNETIC_SWITCHING_TOOLHEAD)
   void est_init();
 #endif

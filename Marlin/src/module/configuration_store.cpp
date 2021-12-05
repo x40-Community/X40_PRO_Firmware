@@ -2518,6 +2518,9 @@ void MarlinSettings::reset() {
       constexpr xyz_pos_t tpxy = TOOLCHANGE_PARK_XY;
       toolchange_settings.change_point = tpxy;
     #endif
+    #if MOTHERBOARD == BOARD_WEEDO_73B
+      toolchange_settings.x40_toolchange_config = 255;
+    #endif
     toolchange_settings.z_raise = TOOLCHANGE_ZRAISE;
   #endif
 

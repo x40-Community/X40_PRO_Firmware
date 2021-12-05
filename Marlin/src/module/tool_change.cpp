@@ -235,7 +235,7 @@ void tool_change(const uint8_t new_tool, bool no_move /*=false*/)
         // Return to position and lower again
         if (!no_move && IsRunning())
         {
-            if (should_swap && !too_cold)
+            if (should_swap && !too_cold && (toolchange_settings.x40_toolchange_config & 1))
             {
                 do_pause_e_move(toolchange_settings.swap_length, MMM_TO_MMS(toolchange_settings.prime_speed));
                 do_pause_e_move(toolchange_settings.extra_prime, 6);
@@ -248,20 +248,39 @@ void tool_change(const uint8_t new_tool, bool no_move /*=false*/)
             apply_motion_limits(destination);
 
             // Should the nozzle move back to the old position?
-            if (can_move_away)
+            if (can_move_away && (toolchange_settings.x40_toolchange_config & 1))
             {
                 if (new_tool == 0)
-                {
-                    do_blocking_move_to_x(-30, 20);
+                {   
+                    if (toolchange_settings.x40_toolchange_config & 2)
+                    {
+                      do_blocking_move_to_x(-10, 100);
+                      do_blocking_move_to_x(-45, 100);
+                      do_blocking_move_to_x(-10, 100);
+                      do_blocking_move_to_x(-45, 100);
+                      do_blocking_move_to_x(-15, 100);
+                      do_blocking_move_to_x(-45, 100);
+                    }
+                    do_blocking_move_to_x(-30, 50);
                 }
                 else
-                {
-                    do_blocking_move_to_x(330, 20);
+                {   
+                    if (toolchange_settings.x40_toolchange_config & 2)
+                    {
+                      do_blocking_move_to_x(315, 100);
+                      do_blocking_move_to_x(345, 100);
+                      do_blocking_move_to_x(315, 100);
+                      do_blocking_move_to_x(345, 100);
+                      do_blocking_move_to_x(315, 100);
+                      do_blocking_move_to_x(345, 100);
+                    }
+                    do_blocking_move_to_x(330, 50);
                 }
 
                 if (DEBUGGING(LEVELING))
                     DEBUG_POS("Move back", destination);
-                do_blocking_move_to(destination, planner.settings.max_feedrate_mm_s[X_AXIS]);
+                // Legodev: should not be needed, at least with cura and can cause trouble
+                //do_blocking_move_to(destination, planner.settings.max_feedrate_mm_s[X_AXIS]);
 
                 if (!wtvar_changing_tool)
                 {

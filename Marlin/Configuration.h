@@ -38,7 +38,7 @@
  */
 #define CONFIGURATION_H_VERSION 020005
 
-#define SHORT_BUILD_VERSION "1.2.0.1"
+#define SHORT_BUILD_VERSION "1.2.0.2"
 
 #define HARDWARE_VERSION "R73B"
 
@@ -255,9 +255,9 @@
   // Priginal Weedo #define DEFAULT_Kd 48.41
 
   // Weedo X40 with X40 Community Coolingsystem
-  #define DEFAULT_Kp 13.32
-  #define DEFAULT_Ki 0.98
-  #define DEFAULT_Kd 45.13
+  #define DEFAULT_Kp 12.54
+  #define DEFAULT_Ki 0.89
+  #define DEFAULT_Kd 43.99
 
 
 #endif // PIDTEMP

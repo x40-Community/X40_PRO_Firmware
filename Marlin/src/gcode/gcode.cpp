@@ -863,6 +863,11 @@ void GcodeSuite::process_parsed_command(const bool no_ok/*=false*/) {
         case 7219: M7219(); break;                                // M7219: Set LEDs, columns, and rows
       #endif
 
+      #if MOTHERBOARD == BOARD_WEEDO_73B
+        case 922: M922(); break;                                  // M922: Enable/disable/query auto purge on tool-change
+        case 923: M923(); break;                                  // M923: Enable/disable/query multiwipe on tool-change
+      #endif
+
       default: parser.unknown_command_warning(); break;
     }
     break;

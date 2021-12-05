@@ -171,8 +171,8 @@
    * below 2.
    */
   //Weedo Value WATCH_TEMP_PERIOD 20 at INCREASE 2
-  // PERIOD 10 mit INCREASE 10 funktioniert!
-  #define WATCH_TEMP_PERIOD   15              // Seconds
+  // 
+  #define WATCH_TEMP_PERIOD   23              // Seconds
   #define WATCH_TEMP_INCREASE 2               // Degrees Celsius
 #endif
 
@@ -1170,7 +1170,7 @@
 //#define LIN_ADVANCE
 #if ENABLED(LIN_ADVANCE)
   //#define EXTRA_LIN_ADVANCE_K // Enable for second linear advance constants
-  #define LIN_ADVANCE_K 0.22    // Unit: mm compression per 1mm/s extruder speed
+  #define LIN_ADVANCE_K 0.0    // Unit: mm compression per 1mm/s extruder speed
   //#define LA_DEBUG            // If enabled, this will generate debug information output over USB.
 #endif
 
