@@ -866,6 +866,7 @@ void GcodeSuite::process_parsed_command(const bool no_ok/*=false*/) {
       #if MOTHERBOARD == BOARD_WEEDO_73B
         case 922: M922(); break;                                  // M922: Enable/disable/query auto purge on tool-change
         case 923: M923(); break;                                  // M923: Enable/disable/query multiwipe on tool-change
+        case   0: M0();   break;                                  // M0:   Weedo X40 PRO pause printing                    
       #endif
 
       default: parser.unknown_command_warning(); break;

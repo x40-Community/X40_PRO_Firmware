@@ -38,7 +38,7 @@
  */
 #define CONFIGURATION_H_VERSION 020005
 
-#define SHORT_BUILD_VERSION "1.2.0.2"
+#define SHORT_BUILD_VERSION "1.2.0.3"
 
 #define HARDWARE_VERSION "R73B"
 
@@ -433,7 +433,7 @@
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 200, 130, 20, 25}
+#define DEFAULT_MAX_FEEDRATE          { 200, 130, 120, 25}
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
@@ -1104,9 +1104,9 @@
 
 #if ENABLED(NOZZLE_PARK_FEATURE)
   // Specify a park position as { X, Y, Z_raise }
-  #define NOZZLE_PARK_POINT { 0, 0, 20 }
-  #define NOZZLE_PARK_XY_FEEDRATE 100   // (mm/s) X and Y axes feedrate (also used for delta Z axis)
-  #define NOZZLE_PARK_Z_FEEDRATE 100    // (mm/s) Z axis feedrate (not used for delta printers)
+  #define NOZZLE_PARK_POINT { 0, 0, 20 }  
+  #define NOZZLE_PARK_XY_FEEDRATE 200   // (mm/s) X and Y axes feedrate (also used for delta Z axis) war 100
+  #define NOZZLE_PARK_Z_FEEDRATE 200    // (mm/s) Z axis feedrate (not used for delta printers) war 100
 #endif
 
 

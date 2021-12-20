@@ -77,7 +77,7 @@
  *
  * "M" Codes
  *
- * M0   - Unconditional stop - Wait for user to press a button on the LCD (Only if ULTRA_LCD is enabled)
+ * M0   - Weedo X40 PRO pause printing, resume with the touch screen
  * M1   -> M0
  * M3   - Turn ON Laser | Spindle (clockwise), set Power | Speed. (Requires SPINDLE_FEATURE or LASER_FEATURE)
  * M4   - Turn ON Laser | Spindle (counter-clockwise), set Power | Speed. (Requires SPINDLE_FEATURE or LASER_FEATURE)
@@ -263,7 +263,7 @@
  * M917 - L6470 tuning: Find minimum current thresholds. (Requires at least one _DRIVER_TYPE L6470)
  * M918 - L6470 tuning: Increase speed until max or error. (Requires at least one _DRIVER_TYPE L6470)
  * M922 - Enable/disable/query auto purge on tool-change
- * M923: Enable/disable/query multiwipe on tool-change
+ * M923 - Enable/disable/query multiwipe on tool-change
  * M951 - Set Magnetic Parking Extruder parameters. (Requires MAGNETIC_PARKING_EXTRUDER)
  * M7219 - Control Max7219 Matrix LEDs. (Requires MAX7219_GCODE)
  *
@@ -977,6 +977,7 @@ private:
   #if MOTHERBOARD == BOARD_WEEDO_73B
     static void M922();
     static void M923();
+    static void M0();
   #endif
 
   static void T(const uint8_t tool_index);

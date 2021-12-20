@@ -448,7 +448,7 @@ const char MMSG_SETTING_FEED[8][22] PROGMEM = {
 	"  自動ワイヤ送り",
 	"Entrada de filamento",
     " Charge filament",
-	" Filament Zufühen",
+	"Filament Zuführen",
 	" Carica filamento",
     " Filament Invoer"
 };
@@ -777,7 +777,7 @@ const char MMSG_RESUME[8][12] PROGMEM = {
 	"  続ける",
 	"  Continuar",
     "  Résumé",
-    " Fortsetzen",
+    "Fortsetzen",
     "  Riprendi",
     "  Hervat"
 };
@@ -799,9 +799,9 @@ const char MMSG_YES[8][7] PROGMEM = {
 	"  はい",
 	"  Si",
     "  OUI",
-    "  JA",
+    "  Ja",
     "  Si",
-    "  JA"
+    "  Ja"
 };
 
 const char MMSG_NO[8][8] PROGMEM = {
@@ -810,7 +810,7 @@ const char MMSG_NO[8][8] PROGMEM = {
 	" いいえ",
 	"  NO",
     "  NON",
-    " NEIN",
+    " Nein",
     "  NO",
     "  NEE"
 };
@@ -832,7 +832,7 @@ const char MMSG_CONFIRM_TITLE[8][14] PROGMEM = {
 	"確認する",
 	"Confirmar",
     "Confirmer",
-    "Bestätigen",
+    "Bestaetigung",
     "Confermare",
     "Bevestig"
 };
@@ -1540,7 +1540,7 @@ const char MMSG_PRINTEND_AGAIN[8][21] PROGMEM = {
  	" もう一度印刷",
 	"Imprimir de nuevo",
     "Imprimer à nouveau",
-    " erneut drucken",
+    "erneut drucken",
     "Stampa di nuovo",
     " Print Opnieuw"
 };
@@ -2548,14 +2548,26 @@ const char MMSG_NOZZLE_Z_OFFSET[8][20] PROGMEM = {
 
 const char MMSG_NOZZLE_X_TITLE[8][55] PROGMEM = {
 	"喷头XY偏置粗调",
- 	"Nozzle XY Offset Coarse Tune",
+ 	"Nozzle X Offset Coarse Tune",
 	"ノズルXYオフセット粗調整",
 	"Boquilla XY Offset Coarse Tune",
     "Réglage grossier décalé de la buse XY",
-    "Düsen XY-Versatz (Offset) Grobeinstellung",
+    "Düsen X-Versatz (Offset) Grobeinstellung",
     "Regolazione approssimativa dell'offset dell'ugello XY.",
     "Printkop XY Afstand"
 };
+
+const char MMSG_NOZZLE_Y_TITLE[8][55] PROGMEM = {
+	"喷头XY偏置粗调",
+ 	"Nozzle Y Offset Coarse Tune",
+	"ノズルXYオフセット粗調整",
+	"Boquilla XY Offset Coarse Tune",
+    "Réglage grossier décalé de la buse XY",
+    "Düsen Y-Versatz (Offset) Grobeinstellung",
+    "Regolazione approssimativa dell'offset dell'ugello XY.",
+    "Printkop XY Afstand"
+};
+
 
 const char MMSG_NOZZLE_X_TEXT[8][190] PROGMEM = {
 	"打印文件NozzleCoarseTune.gcode\r\n选择水平方向两层偏差最小的测试块上的数字, 点击下一步.",
